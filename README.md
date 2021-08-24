@@ -1,5 +1,3 @@
-# api-objective-c-examples
-
 # 皮卡智能抠图API接口项目示例代码
 
 #### 使用示例
