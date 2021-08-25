@@ -18,18 +18,26 @@ NS_ASSUME_NONNULL_BEGIN
  *  GET
  */
 - (void)getWithUrlString:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
-                       success:(void (^)(id responseObject))success
-                       failure:(void (^)(NSError *error))failure;
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(id responseObject))success
+                 failure:(void (^)(NSError *error))failure;
+
+/**
+ *  POST
+ */
+- (void)postWithUrlString:(NSString *)URLString
+               parameters:(NSDictionary *)parameters
+                  success:(void (^)(id responseObject))success
+                  failure:(void (^)(NSError *error))failure;
 
 /**
  * 上传
  */
 - (void)uploadFileWithUrlString:(NSString *)URLString
                      parameters:(NSDictionary *)parameters
-                          data:(NSData *)data
-                       success:(void (^)(id responseObject))success
-                       failure:(void (^)(NSError *error))failure;
+                           data:(NSData *)data
+                        success:(void (^)(id responseObject))success
+                        failure:(void (^)(NSError *error))failure;
 
 @end
 
