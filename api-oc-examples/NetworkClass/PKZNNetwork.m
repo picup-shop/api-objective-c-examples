@@ -20,8 +20,8 @@
         
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"video/mpeg",@"video/mp4",@"audio/mp3", @"image/png", nil];
-        //请登录picup.shop查看你的API密钥 / 账号获取到的APIKEY
-        [manager.requestSerializer setValue:@"b40a8bb481e9402da3b7cb1d2e4c9f60" forHTTPHeaderField:@"APIKEY"];
+        //请登录picup.shop查看你的API密钥
+        [manager.requestSerializer setValue:@"账号获取到的APIKEY" forHTTPHeaderField:@"APIKEY"];
     });
     return  manager;
 }
