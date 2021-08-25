@@ -77,7 +77,7 @@
     btn5.frame = CGRectMake(130, CGRectGetMaxY(btn3.frame) + 10, 90, 30);
     btn5.backgroundColor = [UIColor orangeColor];
     [btn5 setTitle:@"照片上色" forState:UIControlStateNormal];
-    [btn5 addTarget:self action:@selector(photoColoringReturnsBinary) forControlEvents:UIControlEventTouchUpInside];
+    [btn5 addTarget:self action:@selector(photoColoringReturnsBase64) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn5];
 
     UIButton *btn6 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -160,7 +160,7 @@
     NSDictionary *params = @{}; // @{@"crop" : @(crop), @"bgcolor" : bgColor};
     
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:params data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
@@ -256,7 +256,7 @@
     NSDictionary *params = @{}; // @{@"crop" : @(crop), @"bgcolor" : bgColor};
 
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:params data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
@@ -317,7 +317,7 @@
     NSDictionary *params = @{}; // @{@"crop" : @(crop), @"bgcolor" : bgColor};
 
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:params data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
@@ -378,7 +378,7 @@
     NSDictionary *params = @{}; // @{@"crop" : @(crop), @"bgcolor" : bgColor};
 
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:params data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
@@ -527,7 +527,7 @@
     NSData *data = [NSData dataWithContentsOfURL:fileUrl];
     
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:@{} data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
@@ -576,7 +576,7 @@
     NSData *data = [NSData dataWithContentsOfURL:fileUrl];
     
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:@{} data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
@@ -625,7 +625,7 @@
     NSData *data = [NSData dataWithContentsOfURL:fileUrl];
     
     [[PKZNNetwork shared] uploadFileWithUrlString:urlStr parameters:@{} data:data success:^(id  _Nonnull responseObject) {
-        if (responseObject) {
+        if (responseObject && [[NSString stringWithFormat:@"%@", responseObject[@"code"]] isEqualToString:@"0"]) {
             NSData *imageData = [[NSData alloc] initWithBase64EncodedString:responseObject[@"data"][@"imageBase64"] options:0];
             self.handleImage.image = [UIImage imageWithData:imageData];
         }
